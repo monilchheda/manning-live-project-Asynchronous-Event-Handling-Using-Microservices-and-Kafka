@@ -1,0 +1,44 @@
+{
+    "namespace": "org.kafkainaction.monil.m1",
+    "type": "order",
+    "name": "Order-Received",
+    "details": [
+        {
+            "name": "customer_id",
+            "type": "uuid",
+            "doc": "Customer ID of the entity placing the order"
+        },
+        {
+            "name": "time",
+            "type": "long",
+            "doc": "Time the order was generated as UTC milliseconds from the epoch"
+        },
+        {
+            "name": "product_id",
+            "type": "uuid",
+            "doc": "Product ID of the order placed"
+        },
+        {
+            "name": "quantity",
+            "type":"long",
+            "doc": "Quantity ordered"
+        },
+        {
+            "name": "status",
+            "type": {
+                "type": "enum",
+                "name": "order_status",
+                "symbols": [
+                    "received",
+                    "confirmed",
+                    "notify",
+                    "ready_to_be_shipped",
+                    "completed",
+                    "cancelled",
+                    "error"
+                ]
+            },
+            "doc": "The allowed status that our orders will use"
+        }
+    ]
+}
