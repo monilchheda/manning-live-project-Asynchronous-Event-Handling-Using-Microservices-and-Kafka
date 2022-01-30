@@ -1,0 +1,35 @@
+{
+    "namespace": "org.kafkainaction.monil.m1",
+    "type": "error",
+    "name": "Error",
+    "details": [
+        {
+            "name": "customer_id",
+            "type": "uuid",
+            "doc": "Customer ID of the entity placing the order"
+        },
+        {
+            "name": "time",
+            "type": "long",
+            "doc": "Time the notification was generated as UTC milliseconds from the epoch"
+        },
+        {
+            "name": "order_id",
+            "type": "uuid",
+            "doc": "Order ID of entity where notification needs to be sent"
+        },
+        {
+            "name": "error_type",
+            "type": {
+                "type": "enum",
+                "name": "error_types",
+                "symbols": [
+                    "out_of_stock",
+                    "invalid_address",
+                    "payment_error"
+                ]
+            },
+            "doc": "The allowed error types"
+        }        
+    ]
+}
