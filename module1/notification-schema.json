@@ -1,0 +1,49 @@
+{
+    "namespace": "org.kafkainaction.monil.m1",
+    "type": "notification",
+    "name": "Notifications",
+    "details": [
+        {
+            "name": "customer_id",
+            "type": "uuid",
+            "doc": "Customer ID of the entity placing the order"
+        },
+        {
+            "name": "time",
+            "type": "long",
+            "doc": "Time the notification was generated as UTC milliseconds from the epoch"
+        },
+        {
+            "name": "order_id",
+            "type": "uuid",
+            "doc": "Order ID of entity where notification needs to be sent"
+        },
+        {
+            "name": "method",
+            "type": {
+                "type": "enum",
+                "name": "notification_method",
+                "symbols": [
+                    "email",
+                    "text",
+                    "post",
+                    "webn"
+                ]
+            },
+            "doc": "The allowed notification methods"
+        }        
+        {
+            "name": "status",
+            "type": {
+                "type": "enum",
+                "name": "order_status",
+                "symbols": [
+                    "sent",
+                    "delivered",
+                    "error"
+                ]
+            },
+            "doc": "The allowed status that our orders will use"
+        }
+    ]
+}
